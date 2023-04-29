@@ -1,11 +1,10 @@
-import FormUsuario from "./Componentes/FormUsuario";
+import "./App.css";
+import TarefasApp from './TarefasApp';
 
-function App() {
+export default function App() {
   return (
     <div>
-      <FormUsuario></FormUsuario>
+      <TarefasApp></TarefasApp>
     </div>
   );
 }
-
-export default App;

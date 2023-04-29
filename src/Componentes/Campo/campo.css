@@ -5,7 +5,7 @@
 .campo label {
     display: block;
     margin-bottom: 8px;
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .campo input {
@@ -14,8 +14,8 @@
     border-radius: 0px;
     width: 100%;
     border: none;
-    font-size: 24px;
-    padding: 24px;
+    font-size: 18px;
+    padding: 14px;
     box-sizing: border-box;
 }
 
