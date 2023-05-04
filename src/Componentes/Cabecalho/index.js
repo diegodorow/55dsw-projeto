@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import './cabecalho.css'
 
 export default function Cabecalho() {
   return (
@@ -9,12 +10,12 @@ export default function Cabecalho() {
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/">
+                  <Link className="cabecalho" to="/">
                     Início
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/login">
+                  <Link className="cabecalho" to="/login">
                     Administrador
                   </Link>
                 </li>
@@ -22,12 +23,12 @@ export default function Cabecalho() {
             </div>
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link" to="/login">
+                <Link className="cabecalho" to="/login">
                   Entrar
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/sair">
+                <Link className="cabecalho" to="/sair">
                   Sair
                 </Link>
               </li>

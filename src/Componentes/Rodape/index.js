@@ -10,7 +10,7 @@ const Rodape = () => {
         <ul>
           <li>
             <a
-              href="https://www.facebook.com/AluraCursosOnline/"
+              href="https://www.facebook.com/udesc.altovale"
               target="_blank"
               rel="noreferrer"
             >
@@ -19,7 +19,7 @@ const Rodape = () => {
           </li>
           <li>
             <a
-              href="https://twitter.com/aluraonline?lang=en"
+              href="https://twitter.com/udesc"
               target="_blank"
               rel="noreferrer"
             >
@@ -28,15 +28,15 @@ const Rodape = () => {
           </li>
           <li>
             <a
-              href="https://www.instagram.com/aluraonline/?hl=en"
+              href="https://www.instagram.com/udesc.altovale/"
               target="_blank"
               rel="noreferrer"
             >
               <img src={instagram} alt="ícone do instagram" />
             </a>
           </li>
+          <li>Projeto 55DSW</li>
         </ul>
-        <p>Desenvolvido por Alura.</p>
       </section>
     </footer>
   );

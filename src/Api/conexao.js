@@ -4,5 +4,9 @@ const clienteApi = axios.create({
   baseURL: "http://localhost:8080",
 });
 
-export const adicionarUsuario = (username, tarefa) =>
-  clienteApi.post(`/users/${username}`, tarefa);
+export const adicionarUsuario = (usuario) => clienteApi.post(`/users`, usuario);
+
+export const obterUsuario = (usuario) => clienteApi.get(`/users`);
+
+export const autenticarApi = (credencial) =>
+  clienteApi.post(`/autenticar`, credencial);

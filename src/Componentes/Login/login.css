@@ -18,3 +18,47 @@
     font-weight: 400;
     font-size: 32px;
 }
+
+.login {
+    margin: 24px 0;
+}
+
+.login label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.login input {
+    background: #FFFFFF;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    border-radius: 0px;
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    padding: 14px;
+    box-sizing: border-box;
+}
+
+.login-color input {
+    padding: 5px 24px;
+    height: 40px;
+}
+
+.botao {
+    background: #6278F7;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 16px;
+    color: #FFF;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    margin: 8px 5px;
+    
+}
+
+.botao:hover {
+    color: #95FFD4;
+}

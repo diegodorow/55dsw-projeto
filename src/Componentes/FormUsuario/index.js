@@ -2,6 +2,8 @@ import { useState } from "react";
 import Botao from "../Botao";
 import Campo from "../Campo";
 import "./formusuario.css";
+import { useNavigate } from "react-router-dom";
+import { adicionarUsuario, obterUsuario } from "../../Api/conexao";
 
 const FormUsuario = ({ aoCadastrar, times, cadastrarTime }) => {
   const [nome, setNome] = useState("");
@@ -10,24 +12,49 @@ const FormUsuario = ({ aoCadastrar, times, cadastrarTime }) => {
   const [validade, setValidade] = useState("");
   const [numerocvv, setNumerocvv] = useState("");
   const [cep, setCep] = useState("");
-  const [endUsuario, setEndereco] = useState("");
+  const [endereco, setEndereco] = useState("");
   const [numero, setNumero] = useState("");
   const [complemento, setComplemento] = useState("");
   const [bairro, setBairro] = useState("");
   const [cidade, setCidade] = useState("");
   const [uf, setUf] = useState("");
   const [endEntrega, setEnderecoEntrega] = useState("");
-  
+  const [username, setUserName] = useState("");
+  const [senha, setSenha] = useState("");
+
+  const navigate = useNavigate();
+
   const aoSubmeter = (evento) => {
     evento.preventDefault();
-    console.log("form enviado", nome, cpf, cartao, endUsuario, endEntrega);
-    aoCadastrar({
-      nome,
-      cpf,
-      cartao,
-      endUsuario,
-      endEntrega,
-    });
+    console.log("form enviado", nome, cpf, cartao, endereco, endEntrega);
+    const usuario = {
+      nome: nome,
+      cpf: cpf,
+      cartao: cartao,
+      validade: validade,
+      numerocvv: numerocvv,
+      cep: cep,
+      endereco: endereco,
+      numero: numero,
+      complemento: complemento,
+      bairro: bairro,
+      cidade: cidade,
+      uf: uf,
+      usuario: username,
+      senha: senha,
+    };
+
+    console.log(usuario);
+
+    obterUsuario(usuario)
+      .then((resposta) => {})
+      .catch((erro) => console.log(erro));
+
+    adicionarUsuario(usuario)
+      .then((resposta) => {
+        navigate("/tarefas");
+      })
+      .catch((erro) => console.log(erro));
   };
 
   return (
@@ -80,7 +107,7 @@ const FormUsuario = ({ aoCadastrar, times, cadastrarTime }) => {
           obrigatorio={true}
           label="Endereço"
           placeholder="Digite o seu endereço"
-          valor={endUsuario}
+          valor={endereco}
           aoAlterado={(valor) => setEndereco(valor)}
         />
         <Campo
@@ -125,8 +152,21 @@ const FormUsuario = ({ aoCadastrar, times, cadastrarTime }) => {
           valor={endEntrega}
           aoAlterado={(valor) => setEnderecoEntrega(valor)}
         />
+        <Campo
+          obrigatorio={true}
+          label="Usuário"
+          placeholder="Informe o seu usuário"
+          valor={username}
+          aoAlterado={(valor) => setUserName(valor)}
+        />
+        <Campo
+          obrigatorio={true}
+          label="Senha"
+          placeholder="Informe sua senha"
+          valor={senha}
+          aoAlterado={(valor) => setSenha(valor)}
+        />
         <Botao texto="Criar usuário" />
-        
       </form>
     </section>
   );
