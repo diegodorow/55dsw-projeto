@@ -1,0 +1,9 @@
+.lista-suspensa {
+    margin: 14px 0;
+}
+
+.lista-suspensa label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}

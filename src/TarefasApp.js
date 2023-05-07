@@ -6,6 +6,14 @@ import "./TarefasApp.css";
 import FormUsuario from "./Componentes/FormUsuario";
 import Banner from "./Componentes/Banner";
 import Rodape from "./Componentes/Rodape";
+import MenuAdmin from "./Componentes/MenuAdmin";
+import MenuCliente from "./Componentes/MenuCliente";
+import CadastroProduto from "./Componentes/CadastroProduto";
+import ListaCliente from "./Componentes/ListaCliente";
+import MaisVendidos from "./Componentes/MaisVendidos";
+import Confirmacoes from "./Componentes/Confirmacoes";
+import Recebimentos from "./Componentes/Recebimentos";
+import ListaProdutos from "./Componentes/ListaProdutos";
 
 export default function TarefasApp() {
   function AuthenticatedRoute({ children }) {
@@ -22,14 +30,73 @@ export default function TarefasApp() {
         <BrowserRouter>
           <Cabecalho></Cabecalho>
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<Banner />} />
+            <Route path="*" element={<Banner />} />
             <Route path="/login" element={<Login />} />
             <Route path="/formulario" element={<FormUsuario />} />
+            <Route path="/inicio" element={<Banner />} />
             <Route
-              path="/inicio"
+              path="/menuadmin"
               element={
                 <AuthenticatedRoute>
-                  <Banner />
+                  <MenuAdmin />{" "}
+                </AuthenticatedRoute>
+              }
+            />
+            <Route
+              path="/menucliente"
+              element={
+                <AuthenticatedRoute>
+                  {" "}
+                  <MenuCliente />{" "}
+                </AuthenticatedRoute>
+              }
+            />
+            <Route
+              path="/cadastrarproduto"
+              element={
+                <AuthenticatedRoute>
+                  <CadastroProduto />{" "}
+                </AuthenticatedRoute>
+              }
+            />
+            <Route
+              path="/listaproduto"
+              element={
+                <AuthenticatedRoute>
+                  <ListaProdutos />{" "}
+                </AuthenticatedRoute>
+              }
+            />
+            <Route
+              path="/listacliente"
+              element={
+                <AuthenticatedRoute>
+                  <ListaCliente />{" "}
+                </AuthenticatedRoute>
+              }
+            />
+            <Route
+              path="/maisvendidos"
+              element={
+                <AuthenticatedRoute>
+                  <MaisVendidos />{" "}
+                </AuthenticatedRoute>
+              }
+            />
+            <Route
+              path="/confirmacoes"
+              element={
+                <AuthenticatedRoute>
+                  <Confirmacoes />{" "}
+                </AuthenticatedRoute>
+              }
+            />
+            <Route
+              path="/recebimentos"
+              element={
+                <AuthenticatedRoute>
+                  <Recebimentos />{" "}
                 </AuthenticatedRoute>
               }
             />

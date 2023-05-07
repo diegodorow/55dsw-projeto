@@ -1,25 +1,19 @@
-.campo {
-    margin: 24px 0;
+.lista-tamanho {
+    margin: 14px 0;
 }
 
-.campo label {
+.lista-tamanho label {
     display: block;
     margin-bottom: 8px;
-    font-size: 24px;
+    font-size: 14px;
 }
-
-.campo input {
+.lista-tamanho select {
     background: #FFFFFF;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
     border-radius: 0px;
     width: 100%;
     border: none;
     font-size: 18px;
-    padding: 14px;
+    padding: 4px;
     box-sizing: border-box;
-}
-
-.campo-color input {
-    padding: 5px 24px;
-    height: 40px;
 }

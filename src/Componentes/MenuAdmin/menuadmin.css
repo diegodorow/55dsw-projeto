@@ -1,0 +1,25 @@
+.menu {
+  background: 6278F7;
+  border-radius: 10px;
+  font-size: 18px;
+  color: FFF;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  width: 10%;
+  flex-direction: column;
+  padding-left: 0.5rem;
+  list-style: none;
+  text-decoration: none;
+}
+
+.menu:hover {
+  color: #95FFD4;
+}
+
+.menu a {
+  text-decoration: none;
+  font-size: 1.125rem;
+  
+}

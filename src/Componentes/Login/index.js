@@ -21,14 +21,22 @@ export default function Login() {
     setSenha(event.target.value);
   }
 
-  function loginHandler(event) {
-    if (autCtx.autenticar(usuario, senha)) {
-      console.log("autenticou");
+  async function loginHandler(event) {
+    if (await autCtx.autenticar(usuario, senha)) {
+      entraAdmin();
+      entraCliente();
       navigate("/inicio");
     } else {
       setLoginFalhou(true);
-      console.log("não autenticou");
     }
+  }
+
+  async function entraAdmin(event) {
+    await autCtx.validaradmin(usuario, senha);
+  }
+
+  async function entraCliente(event) {
+    await autCtx.validarcliente(usuario, senha);
   }
 
   return (
@@ -55,7 +63,7 @@ export default function Login() {
         <div className="login">
           <label>Senha: </label>
           <input
-            type="text"
+            type="password"
             name="senha"
             value={senha}
             onChange={senhaHandler}

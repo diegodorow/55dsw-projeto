@@ -9,7 +9,7 @@
     font-weight: bold;
     border: none;
     margin: 8px 5px;
-    
+    text-decoration-line: none;
 }
 
 .cabecalho:hover {

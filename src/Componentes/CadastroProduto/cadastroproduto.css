@@ -14,6 +14,14 @@
     padding: 36px 64px;
 }
 
+h1 {
+    font-weight: 400;
+    font-size: 32px;
+    color: #6278F7;
+    width: 100%;
+    font-weight: bold;
+}
+
 .formulario-container .formulario h2 {
     font-weight: 400;
     font-size: 32px;
