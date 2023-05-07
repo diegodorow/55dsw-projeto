@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { obterProdutosApi, excluirCamisaApi } from "../../Api/conexao";
+import {
+  obterProdutosApi,
+  excluirCamisaApi,
+  adicionarEstoqueApi,
+} from "../../Api/conexao";
 import { FaTrashAlt, FaPlus } from "react-icons/fa";
-import ListaQuantidade from "../ListaQuantidade";
+import ListaSuspensa from "../ListaSuspensa";
 
 const ListaProdutos = () => {
   const [camisas, setCamisas] = useState([]);
   useEffect(() => atualizaCamisas());
   const [qtds] = useState(["100", "200", "300", "400", "500"]);
+  const [quantidade, setQuantidade] = useState("");
 
   function atualizaCamisas() {
     obterProdutosApi()
@@ -26,8 +31,16 @@ const ListaProdutos = () => {
       .catch((erro) => console.log(erro));
   }
 
-  function adicionarQuantidade(id) {
-    console.log("visualizar tarefa " + id);
+  function adicionarQuantidade(camisa) {
+    const estoque = {
+      operacao: "adicionando estoque",
+      pedido: "0",
+      produto: camisa.id,
+      quantidade: quantidade,
+    };
+    console.log(estoque);
+    adicionarEstoqueApi(estoque);
+    console.log("visualizar tarefa " + camisa.id);
   }
 
   return (
@@ -59,11 +72,15 @@ const ListaProdutos = () => {
               <td>{camisa.valor}</td>
               <td>{camisa.tamanho}</td>
               <td>{camisa.cor}</td>
-              <ListaQuantidade items={qtds} />
+              <ListaSuspensa
+                items={qtds}
+                valor={quantidade}
+                aoAlterado={(valor) => setQuantidade(valor)}
+              />
               <td>
                 <button
                   className="btn btn-success mb-3"
-                  onClick={() => adicionarQuantidade(camisa.id)}
+                  onClick={() => adicionarQuantidade(camisa)}
                 >
                   <FaPlus />
                 </button>

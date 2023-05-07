@@ -4,7 +4,8 @@ const clienteApi = axios.create({
   baseURL: "http://localhost:8080",
 });
 
-export const adicionarUsuario = (usuario) => clienteApi.post(`/users`, usuario);
+export const adicionarUsuarioApi = (usuario) =>
+  clienteApi.post(`/users`, usuario);
 
 export const obterUsuario = (usuario) => clienteApi.get(`/users`);
 
@@ -24,3 +25,5 @@ export const obterProdutosApi = () => clienteApi.get(`/produtos`);
 
 export const excluirCamisaApi = (idCamisa) =>
   clienteApi.delete(`/produtos/${idCamisa}`);
+
+export const adicionarEstoqueApi = (estoque) => clienteApi.post(`/estoque`, estoque);
