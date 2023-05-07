@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { obterProdutosApi, excluirCamisaApi } from "../../Api/conexao";
-import {
-  FaTrashAlt,
-  FaPlus,
-} from "react-icons/fa";
+import { FaTrashAlt, FaPlus } from "react-icons/fa";
+import ListaQuantidade from "../ListaQuantidade";
 
 const ListaProdutos = () => {
   const [camisas, setCamisas] = useState([]);
   useEffect(() => atualizaCamisas());
+  const [qtds] = useState(["100", "200", "300", "400", "500"]);
 
   function atualizaCamisas() {
     obterProdutosApi()
@@ -44,9 +43,10 @@ const ListaProdutos = () => {
           <tr>
             <td>Código</td>
             <td>Descrição do Produto</td>
+            <td>Valor</td>
             <td>Tamanho</td>
             <td>Cor</td>
-            <td>Quantidade</td>
+            <td>Input</td>
             <td>Add Qtd</td>
             <td>Remover</td>
           </tr>
@@ -56,9 +56,10 @@ const ListaProdutos = () => {
             <tr key={camisa.id}>
               <td>{camisa.id}</td>
               <td>{camisa.descricao}</td>
+              <td>{camisa.valor}</td>
               <td>{camisa.tamanho}</td>
               <td>{camisa.cor}</td>
-              <td></td>
+              <ListaQuantidade items={qtds} />
               <td>
                 <button
                   className="btn btn-success mb-3"

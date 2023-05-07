@@ -1,13 +1,13 @@
-.lista-tamanho {
-    margin: 14px 0;
+.lista-quantidade {
+    margin: 4px;
 }
 
-.lista-tamanho label {
-    display: block;
+.lista-quantidade label {
+    display: flex;
     margin-bottom: 8px;
-    font-size: 14px;
+    font-size: 2px;
 }
-.lista-tamanho select {
+.lista-quantidade select {
     background: #FFFFFF;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
     border-radius: 0px;

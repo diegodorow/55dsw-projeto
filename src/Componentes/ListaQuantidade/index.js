@@ -1,7 +1,7 @@
-import './lista-tamanho.css'
+import './lista-quantidade.css'
 
-const ListaTamanho = ({label, items,  valor, aoAlterado, obrigatorio = false}) => {
-    return (<div className="lista-tamanho">
+const ListaQuantidade = ({label, items,  valor, aoAlterado, obrigatorio = false}) => {
+    return (<div className="lista-quantidade">
         <label>{label}</label>
         <select required={obrigatorio} value={valor}>
             <option />
@@ -10,4 +10,4 @@ const ListaTamanho = ({label, items,  valor, aoAlterado, obrigatorio = false}) =
     </div>)
 }
 
-export default ListaTamanho
+export default ListaQuantidade

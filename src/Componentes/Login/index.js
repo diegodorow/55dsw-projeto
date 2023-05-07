@@ -63,7 +63,8 @@ export default function Login() {
         <div className="login">
           <label>Senha: </label>
           <input
-            type="password"
+            //type="password"
+            type="text"
             name="senha"
             value={senha}
             onChange={senhaHandler}
