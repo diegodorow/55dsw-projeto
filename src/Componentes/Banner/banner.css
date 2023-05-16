@@ -1,0 +1,19 @@
+.banner {
+  width: 100%;
+  position: relative;
+}
+
+.banner img {
+  width: 95%;
+  height: 288px;
+}
+
+.banner h1 {
+  position: absolute;
+  z-index: 1;
+  font-size: 2.5rem;
+  width: 401px;
+  height: 144px;
+  top: 55px;
+  left: 44px;
+}

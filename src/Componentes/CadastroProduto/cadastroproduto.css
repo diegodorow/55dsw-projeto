@@ -1,37 +1,58 @@
-.formulario-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-    margin: 80px 50px;
-    width: 80%;
+.formulario-container-cadproduto {
+  display: block;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 80px 50px;
+  width: 100%;
 }
 
-.formulario-container .formulario {
-    background: #F7F7F7;
-    box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.08);
-    border-radius: 20px;
-    flex: 1;
-    padding: 36px 64px;
+.formulario-container-cadproduto .formulario {
+  background: #f7f7f7;
+  box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  flex: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 36px 64px;
 }
 
 h1 {
-    font-weight: 400;
-    font-size: 32px;
-    color: #6278F7;
-    width: 100%;
-    font-weight: bold;
+  font-weight: 400;
+  font-size: 32px;
+  color: #6278f7;
+  width: 100%;
+  font-weight: bold;
 }
 
-.formulario-container .formulario h2 {
-    font-weight: 400;
-    font-size: 32px;
+.formulario-container-cadproduto .formulario h2 {
+  font-weight: 400;
+  font-size: 32px;
 }
 
-.formulario-container .entrega {
-    background: #F7F7F7;
-    box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.08);
-    border-radius: 20px;
-    flex: 1;
-    padding: 36px 64px;
-    width: 100%;
+.formulario-container-cadproduto .entrega {
+  background: #f7f7f7;
+  box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  flex: 1;
+  padding: 36px 64px;
+  width: 100%;
+}
+
+#container-center {
+  position: absolute;
+  left: 0;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#formatar-cadproduto {
+  margin-top: 60%;
+  position: absolute;
+  margin-top: 10;
+  left: 20%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
 }

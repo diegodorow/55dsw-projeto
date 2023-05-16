@@ -1,6 +1,11 @@
+import MenuAdmin from "../MenuAdmin";
+import "./recebimentos.css";
+
 const Recebimentos = () => {
-    return (
-      <div className="container">
+  return (
+    <div id="container-center">
+      <MenuAdmin />
+      <div id="formatar">
         <h1>Recebimentos</h1>
         <table className="table">
           <thead>
@@ -14,8 +19,8 @@ const Recebimentos = () => {
           </thead>
         </table>
       </div>
-    );
-  };
-  
-  export default Recebimentos;
-  
+    </div>
+  );
+};
+
+export default Recebimentos;

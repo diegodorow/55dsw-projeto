@@ -4,7 +4,6 @@ import Login from "./Componentes/Login";
 import AutProvider, { useAutCtx } from "./Componentes/AutCtx";
 import "./TarefasApp.css";
 import FormUsuario from "./Componentes/FormUsuario";
-import Banner from "./Componentes/Banner";
 import Rodape from "./Componentes/Rodape";
 import MenuAdmin from "./Componentes/MenuAdmin";
 import MenuCliente from "./Componentes/MenuCliente";
@@ -14,6 +13,7 @@ import MaisVendidos from "./Componentes/MaisVendidos";
 import Confirmacoes from "./Componentes/Confirmacoes";
 import Recebimentos from "./Componentes/Recebimentos";
 import ListaProdutos from "./Componentes/ListaProdutos";
+import Galeria from "./Componentes/Galeria";
 
 export default function TarefasApp() {
   function AuthenticatedRoute({ children }) {
@@ -30,11 +30,11 @@ export default function TarefasApp() {
         <BrowserRouter>
           <Cabecalho></Cabecalho>
           <Routes>
-            <Route path="/" element={<Banner />} />
-            <Route path="*" element={<Banner />} />
+            <Route path="/" element={<Galeria />} />
+            <Route path="*" element={<Galeria />} />
             <Route path="/login" element={<Login />} />
             <Route path="/formulario" element={<FormUsuario />} />
-            <Route path="/inicio" element={<Banner />} />
+            <Route path="/inicio" element={<Galeria />} />
             <Route
               path="/menuadmin"
               element={

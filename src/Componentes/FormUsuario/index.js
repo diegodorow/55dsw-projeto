@@ -33,6 +33,8 @@ const FormUsuario = () => {
   const navigate = useNavigate();
 
   const [tipos] = useState(["Administrador", "Cliente"]);
+  const [estados] = useState(["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", 
+  "RR", "RO", "RJ", "RN", "RS", "SC", "SE", "SP", "TO"]);
 
   const aoSubmeter = (evento) => {
     evento.preventDefault();
@@ -153,10 +155,10 @@ const FormUsuario = () => {
           valor={cidade}
           aoAlterado={(valor) => setCidade(valor)}
         />
-        <Campo
+        <ListaSuspensa
           obrigatorio={true}
           label="Estado"
-          placeholder="Digite o estado"
+          items={estados}
           valor={uf}
           aoAlterado={(valor) => setUf(valor)}
         />
@@ -220,10 +222,10 @@ const FormUsuario = () => {
           valor={cidadeEntrega}
           aoAlterado={(valor) => setCidadeEntrega(valor)}
         />
-        <Campo
+        <ListaSuspensa
           obrigatorio={true}
           label="Estado"
-          placeholder="Digite o estado"
+          items={estados}
           valor={ufEntrega}
           aoAlterado={(valor) => setUfEntrega(valor)}
         />

@@ -18,7 +18,7 @@ export const validaradminconexao = (credencial) =>
 export const validaraclienteconexao = (credencial) =>
   clienteApi.post(`/validarcliente`, credencial);
 
-export const adicionarProduto = (produto) =>
+export const adicionarProdutoApi = (produto) =>
   clienteApi.post(`/produtos`, produto);
 
 export const obterProdutosApi = () => clienteApi.get(`/produtos`);
@@ -26,4 +26,4 @@ export const obterProdutosApi = () => clienteApi.get(`/produtos`);
 export const excluirCamisaApi = (idCamisa) =>
   clienteApi.delete(`/produtos/${idCamisa}`);
 
-export const adicionarEstoqueApi = (estoque) => clienteApi.post(`/estoque`, estoque);
+export const adicionarEstoqueApi = (id, estoque) => clienteApi.post(`/addestoque/${id}`,  estoque);

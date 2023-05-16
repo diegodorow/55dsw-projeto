@@ -1,6 +1,11 @@
+import MenuAdmin from "../MenuAdmin";
+import "./confirmacoes.css";
+
 const Confirmacoes = () => {
-    return (
-      <div className="container">
+  return (
+    <div id="container-center">
+      <MenuAdmin />
+      <div id="formatar">
         <h1>Confirmações</h1>
         <table className="table">
           <thead>
@@ -16,8 +21,8 @@ const Confirmacoes = () => {
           </thead>
         </table>
       </div>
-    );
-  };
-  
-  export default Confirmacoes;
-  
+    </div>
+  );
+};
+
+export default Confirmacoes;
