@@ -14,6 +14,7 @@ import Confirmacoes from "./Componentes/Confirmacoes";
 import Recebimentos from "./Componentes/Recebimentos";
 import ListaProdutos from "./Componentes/ListaProdutos";
 import Galeria from "./Componentes/Galeria";
+import Carrinho from "./Componentes/Carrinho";
 
 export default function TarefasApp() {
   function AuthenticatedRoute({ children }) {
@@ -97,6 +98,14 @@ export default function TarefasApp() {
               element={
                 <AuthenticatedRoute>
                   <Recebimentos />{" "}
+                </AuthenticatedRoute>
+              }
+            />
+            <Route
+              path="/carrinho"
+              element={
+                <AuthenticatedRoute>
+                  <Carrinho />{" "}
                 </AuthenticatedRoute>
               }
             />

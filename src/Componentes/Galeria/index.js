@@ -14,6 +14,7 @@ export default function Galeria() {
       })
       .catch((erro) => console.log(erro));
   }
+
   return (
     <section>
       <Banner />

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./cabecalho.css";
 import { useAutCtx } from "../AutCtx";
+import { FaShoppingCart } from "react-icons/fa";
 
 export default function Cabecalho() {
   const autCtx = useAutCtx();
@@ -25,20 +26,29 @@ export default function Cabecalho() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                {usuarioAdmin && (
-                  <Link className="cabecalho" to="/menuadmin">
-                    Administrador
-                  </Link>)}
+                  {usuarioAdmin && (
+                    <Link className="cabecalho" to="/menuadmin">
+                      Administrador
+                    </Link>
+                  )}
                 </li>
                 <li className="nav-item">
-                {usuarioCliente && (
-                  <Link className="cabecalho" to="/menucliente">
-                    Cliente
-                  </Link>)}
+                  {usuarioCliente && (
+                    <Link className="cabecalho" to="/menucliente">
+                      Cliente
+                    </Link>
+                  )}
                 </li>
               </ul>
             </div>
             <ul className="navbar-nav">
+              <li className="nav-item">
+                {usuarioCliente && (
+                  <Link className="cabecalho" to="/carrinho">
+                    <FaShoppingCart>Cliente</FaShoppingCart>
+                  </Link>
+                )}
+              </li>
               <li className="nav-item">
                 {!foiAutenticado && (
                   <Link className="cabecalho" to="/login">

@@ -7,7 +7,7 @@ const clienteApi = axios.create({
 export const adicionarUsuarioApi = (usuario) =>
   clienteApi.post(`/users`, usuario);
 
-export const obterUsuario = (usuario) => clienteApi.get(`/users`);
+export const obterUsuarioApi = (usuario) => clienteApi.get(`/users`);
 
 export const autenticarApi = (credencial) =>
   clienteApi.post(`/autenticar`, credencial);
@@ -26,4 +26,15 @@ export const obterProdutosApi = () => clienteApi.get(`/produtos`);
 export const excluirCamisaApi = (idCamisa) =>
   clienteApi.delete(`/produtos/${idCamisa}`);
 
-export const adicionarEstoqueApi = (id, estoque) => clienteApi.post(`/addestoque/${id}`,  estoque);
+export const adicionarEstoqueApi = (id, estoque) =>
+  clienteApi.post(`/addestoque/${id}`, estoque);
+
+export const obterClientesApi = () => clienteApi.get(`/clientes`);
+
+export const bloquearClientesApi = (id, bloqueio) =>
+  clienteApi.post(`/bloquearclientes/${id}`, bloqueio);
+
+export const obterPedidosApi = () => clienteApi.get(`/pedidos`);
+
+export const confirmarPedidosApi = (id, bloqueio) =>
+  clienteApi.post(`/confirmarpedidos/${id}`, bloqueio);

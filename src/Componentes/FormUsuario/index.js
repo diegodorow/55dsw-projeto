@@ -3,7 +3,7 @@ import Botao from "../Botao";
 import Campo from "../Campo";
 import "./formusuario.css";
 import { useNavigate } from "react-router-dom";
-import { adicionarUsuarioApi, obterUsuario } from "../../Api/conexao";
+import { adicionarUsuarioApi, obterUsuarioApi } from "../../Api/conexao";
 import ListaSuspensa from "../ListaSuspensa";
 
 const FormUsuario = () => {
@@ -56,7 +56,7 @@ const FormUsuario = () => {
       administrador: administrador,
     };
 
-    obterUsuario(usuario)
+    obterUsuarioApi(usuario)
       .then((resposta) => {})
       .catch((erro) => console.log(erro));
 
