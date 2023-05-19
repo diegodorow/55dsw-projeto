@@ -54,6 +54,13 @@ const FormUsuario = () => {
       usuario: username,
       senha: senha,
       administrador: administrador,
+      entregacep: cepEntrega,
+      entregaendereco: enderecoEntrega,
+      entreganumero: numeroEntrega,
+      entregacomplemento: complementoEntrega,
+      entregabairro: bairroEntrega,
+      entregacidade: cidadeEntrega,
+      entregauf: ufEntrega,
     };
 
     obterUsuarioApi(usuario)

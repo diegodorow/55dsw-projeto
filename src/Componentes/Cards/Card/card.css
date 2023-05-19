@@ -17,7 +17,7 @@ h2 {
 }
 
 .style-card {
-  background-color: #6278F7;
+  background-color: #6278f7;
   border-radius: 20px;
   height: 280px;
   width: 285px;
@@ -73,6 +73,7 @@ h2 {
   font-family: "GandhiSansBold";
 }
 
-#favoritar {
+.favoritar {
   cursor: pointer;
+  padding-bottom: 40px;
 }

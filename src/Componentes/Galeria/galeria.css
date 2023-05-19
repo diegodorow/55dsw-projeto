@@ -8,7 +8,6 @@
   color: blueviolet;
 }
 
-
 h2 {
   color: #7b78e5;
   font-size: 24px;
@@ -23,10 +22,11 @@ h2 {
 }
 
 .style-card {
-  background-color: #6278F7;
+  display: flexbox;
+  background-color: #6278f7;
   border-radius: 20px;
-  height: 280px;
-  width: 285px;
+  height: 500px;
+  width: 300px;
   margin-right: 1rem;
   margin-bottom: 1.35rem;
   cursor: pointer;

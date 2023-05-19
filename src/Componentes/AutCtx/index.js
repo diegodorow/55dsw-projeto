@@ -14,6 +14,8 @@ export default function AutProvider({ children }) {
   const [isAdmin, setAdmin] = useState(false);
   const [isCliente, setCliente] = useState(false);
 
+  const [testeCar, setTesteCar] = useState([]);
+
   async function autenticar(usuario, senha) {
     const credencial = { username: usuario, senha: senha };
     const resposta = await autenticarApi(credencial);
@@ -58,9 +60,24 @@ export default function AutProvider({ children }) {
     setCliente(false);
   }
 
+  function adicionarAoCarrinho(item) {
+    setTesteCar([...testeCar, item]);
+  }
+
   return (
     <AutCtx.Provider
-      value={{ autenticado, isAdmin, isCliente, autenticar, validaradmin, validarcliente, sair, usuario }}
+      value={{
+        autenticado,
+        isAdmin,
+        isCliente,
+        usuario,
+        testeCar,
+        autenticar,
+        validaradmin,
+        validarcliente,
+        sair,
+        adicionarAoCarrinho,
+      }}
     >
       {children}
     </AutCtx.Provider>
