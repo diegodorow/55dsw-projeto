@@ -69,7 +69,7 @@ const FormUsuario = () => {
 
     adicionarUsuarioApi(usuario)
       .then((resposta) => {
-        navigate("/inicio");
+        navigate("/login");
       })
       .catch((erro) => console.log(erro));
   };

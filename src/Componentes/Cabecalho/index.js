@@ -35,7 +35,7 @@ export default function Cabecalho() {
                 <li className="nav-item">
                   {usuarioCliente && (
                     <Link className="cabecalho" to="/menucliente">
-                      Cliente
+                      Pedidos
                     </Link>
                   )}
                 </li>

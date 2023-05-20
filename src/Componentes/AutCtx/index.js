@@ -3,6 +3,7 @@ import {
   autenticarApi,
   validaradminconexao,
   validaraclienteconexao,
+  obterUsuarioLogadoApi,
 } from "../../Api/conexao";
 
 export const AutCtx = createContext();
@@ -13,6 +14,7 @@ export default function AutProvider({ children }) {
   const [usuario, setUsuario] = useState(null);
   const [isAdmin, setAdmin] = useState(false);
   const [isCliente, setCliente] = useState(false);
+  const [usuarioLogado, setUsuarioLogado] = useState("");
 
   const [testeCar, setTesteCar] = useState([]);
 
@@ -24,12 +26,21 @@ export default function AutProvider({ children }) {
     if (foiAutenticado) {
       setAutenticado(true);
       setUsuario(usuario);
+      atualizarUsuarioLogado(usuario);
       return true;
     } else {
       setAutenticado(false);
       setUsuario(null);
       return false;
     }
+  }
+
+  function atualizarUsuarioLogado(usuario) {
+    obterUsuarioLogadoApi(usuario)
+      .then((resposta) => {
+        setUsuarioLogado(resposta.data);
+      })
+      .catch((erro) => console.log(erro));
   }
 
   async function validaradmin(usuario, senha) {
@@ -64,6 +75,10 @@ export default function AutProvider({ children }) {
     setTesteCar([...testeCar, item]);
   }
 
+  function limparCarrinho() {
+    setTesteCar([]);
+  }
+
   return (
     <AutCtx.Provider
       value={{
@@ -71,12 +86,14 @@ export default function AutProvider({ children }) {
         isAdmin,
         isCliente,
         usuario,
+        usuarioLogado,
         testeCar,
         autenticar,
         validaradmin,
         validarcliente,
         sair,
         adicionarAoCarrinho,
+        limparCarrinho,
       }}
     >
       {children}

@@ -53,7 +53,7 @@ const Confirmacoes = () => {
                 <td>{pedido.nome}</td>
                 <td>{pedido.cartao}</td>
                 <td>{pedido.valor}</td>
-                <td>{pedido.status === 1 ? "Confirmado" : "Bloqueado"}</td>
+                <td>{pedido.status === 1 ? "Confirmado" : "Pendente"}</td>
                 <td>
                   <button
                     className="btn btn-success mb-3"
