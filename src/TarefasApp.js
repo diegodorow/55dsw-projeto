@@ -15,6 +15,7 @@ import Recebimentos from "./Componentes/Recebimentos";
 import ListaProdutos from "./Componentes/ListaProdutos";
 import Galeria from "./Componentes/Galeria";
 import Carrinho from "./Componentes/Carrinho";
+import Viagens from "./Componentes/Viagens";
 
 export default function TarefasApp() {
   function AuthenticatedRoute({ children }) {
@@ -98,6 +99,14 @@ export default function TarefasApp() {
               element={
                 <AuthenticatedRoute>
                   <Recebimentos />{" "}
+                </AuthenticatedRoute>
+              }
+            />
+            <Route
+              path="/viagens"
+              element={
+                <AuthenticatedRoute>
+                  <Viagens />{" "}
                 </AuthenticatedRoute>
               }
             />

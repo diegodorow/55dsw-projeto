@@ -39,8 +39,8 @@ export default function MenuCliente() {
               <td>{pedido.valor}</td>
               <td>{pedido.cartao}</td>
               <td>{pedido.entrega}</td>
-              <td>{pedido.previsao}</td>
-              <td>{pedido.status === 1 ? "Confirmado" : "Pendente"}</td>
+              <td>{new Date(`${pedido.previsao}`).toDateString()}</td>
+              <td>{pedido.status === 0 ? "Pendente" : pedido.status === 1 ? "Confirmado" : "Bloqueado"}</td>
             </tr>
           ))}
         </tbody>

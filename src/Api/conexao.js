@@ -9,7 +9,8 @@ export const adicionarUsuarioApi = (usuario) =>
 
 export const obterUsuarioApi = () => clienteApi.get(`/users`);
 
-export const obterUsuarioLogadoApi = (username) => clienteApi.get(`/users/${username}`);
+export const obterUsuarioLogadoApi = (username) =>
+  clienteApi.get(`/users/${username}`);
 
 export const autenticarApi = (credencial) =>
   clienteApi.post(`/autenticar`, credencial);
@@ -31,6 +32,9 @@ export const excluirCamisaApi = (idCamisa) =>
 export const adicionarEstoqueApi = (id, estoque) =>
   clienteApi.post(`/addestoque/${id}`, estoque);
 
+export const removerEstoqueApi = (estoque) =>
+  clienteApi.post(`/baixaestoque`, estoque);
+
 export const obterClientesApi = () => clienteApi.get(`/clientes`);
 
 export const bloquearClientesApi = (id, bloqueio) =>
@@ -41,7 +45,17 @@ export const obterPedidosApi = () => clienteApi.get(`/pedidos`);
 export const confirmarPedidosApi = (id, bloqueio) =>
   clienteApi.post(`/confirmarpedidos/${id}`, bloqueio);
 
-  export const adicionarPedidoApi = (pedido, carrinho) =>
+export const adicionarPedidoApi = (pedido, carrinho) =>
   clienteApi.post(`/pedidos`, pedido, carrinho);
 
-  export const obterPedidosClienteApi = (id) => clienteApi.get(`/pedidos/${id}`);
+export const obterPedidosClienteApi = (id) => clienteApi.get(`/pedidos/${id}`);
+
+export const obterDashboardApi = () => clienteApi.get(`/dashboard`);
+
+export const confirmarViagensApi = (id, confirmar) =>
+  clienteApi.post(`/confirmarviagens/${id}`, confirmar);
+
+export const obterViagensApi = () => clienteApi.get(`/viagens`);
+
+export const adicionarViagemApi = (viagem) =>
+  clienteApi.post(`/viagens`, viagem);

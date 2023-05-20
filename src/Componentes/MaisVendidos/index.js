@@ -2,6 +2,7 @@ import MenuAdmin from "../MenuAdmin";
 import "./maisvendidos.css";
 
 const MaisVendidos = () => {
+  
   return (
     <div id="container-center">
       <MenuAdmin />

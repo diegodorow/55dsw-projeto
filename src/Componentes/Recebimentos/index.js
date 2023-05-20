@@ -24,7 +24,6 @@ const Recebimentos = () => {
           <thead>
             <tr>
               <td>Pedido</td>
-              <td>Nome do cliente</td>
               <td>Número do cartão</td>
               <td>Valor da compra</td>
               <td>Status</td>
@@ -34,7 +33,6 @@ const Recebimentos = () => {
             {pedidos.map((pedido) => (
               <tr key={pedido.id}>
                 <td>{pedido.id}</td>
-                <td>{pedido.nome}</td>
                 <td>{pedido.cartao}</td>
                 <td>{pedido.valor}</td>
                 <td>{pedido.status === 1 ? "Confirmado" : "Bloqueado"}</td>

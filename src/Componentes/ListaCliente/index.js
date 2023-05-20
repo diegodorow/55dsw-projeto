@@ -33,14 +33,13 @@ const ListaClientes = () => {
   return (
     <div id="container-center">
       <MenuAdmin />
-      <div id="formatar">
+      <div id="formatar-clientes">
         <h1>Lista de Clientes</h1>
         <table className="table">
           <thead>
             <tr>
               <td>Código</td>
               <td>Nome Cliente</td>
-              <td>Última Compra</td>
               <td>Status</td>
               <td>Bloquear</td>
             </tr>
@@ -50,7 +49,6 @@ const ListaClientes = () => {
               <tr key={cliente.id}>
                 <td>{cliente.id}</td>
                 <td>{cliente.nome}</td>
-                <td></td>
                 <td>{cliente.status === 1 ? "Ativo" : "Bloqueado"}</td>
                 <td>
                   <button

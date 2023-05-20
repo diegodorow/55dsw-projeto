@@ -1,20 +1,13 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import {
-  obterProdutosApi,
-  excluirCamisaApi,
-  adicionarEstoqueApi,
-} from "../../Api/conexao";
-import { FaTrashAlt, FaPlus } from "react-icons/fa";
-import ListaSuspensa from "../ListaSuspensa";
+import { obterProdutosApi } from "../../Api/conexao";
+import { FaPlus } from "react-icons/fa";
 import MenuAdmin from "../MenuAdmin";
 import "./produtos.css";
 
 const ListaProdutos = () => {
   const [camisas, setCamisas] = useState([]);
   useEffect(() => atualizaCamisas());
-  const [qtds] = useState(["100", "200", "300", "400", "500"]);
-  const [quantidade, setQuantidade] = useState("");
 
   function atualizaCamisas() {
     obterProdutosApi()
@@ -22,25 +15,6 @@ const ListaProdutos = () => {
         setCamisas(resposta.data);
       })
       .catch((erro) => console.log(erro));
-  }
-
-  function excluirCamisa(id) {
-    excluirCamisaApi(id)
-      .then((resposta) => {
-        console.log(resposta);
-        atualizaCamisas();
-      })
-      .catch((erro) => console.log(erro));
-  }
-
-  function adicionarQuantidade(camisa) {
-    const estoque = {
-      operacao: "Adicionar estoque",
-      pedido: "0",
-      quantidade: quantidade,
-    };
-    console.log(estoque);
-    adicionarEstoqueApi(camisa.id, estoque);
   }
 
   return (
@@ -61,9 +35,7 @@ const ListaProdutos = () => {
               <td>Valor</td>
               <td>Tamanho</td>
               <td>Cor</td>
-              <td>Input</td>
-              <td>Add Qtd</td>
-              <td>Remover</td>
+              <td>Quantidade</td>
             </tr>
           </thead>
           <tbody>
@@ -74,27 +46,7 @@ const ListaProdutos = () => {
                 <td>{camisa.valor}</td>
                 <td>{camisa.tamanho}</td>
                 <td>{camisa.cor}</td>
-                <ListaSuspensa
-                  items={qtds}
-                  valor={quantidade}
-                  aoAlterado={(valor) => setQuantidade(valor)}
-                />
-                <td>
-                  <button
-                    className="btn btn-success mb-3"
-                    onClick={() => adicionarQuantidade(camisa)}
-                  >
-                    <FaPlus />
-                  </button>
-                </td>
-                <td>
-                  <button
-                    className="btn btn-success mb-3"
-                    onClick={() => excluirCamisa(camisa.id)}
-                  >
-                    <FaTrashAlt />
-                  </button>
-                </td>
+                <td>{camisa.quantidade}</td>
               </tr>
             ))}
           </tbody>

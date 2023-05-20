@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAutCtx } from "../AutCtx";
-import { adicionarPedidoApi } from "../../Api/conexao";
+import { adicionarPedidoApi, removerEstoqueApi } from "../../Api/conexao";
+import "./carrinho.css"
 
 export default function Carrinho() {
   const navigate = useNavigate();
@@ -8,6 +9,7 @@ export default function Carrinho() {
   let carrinho = autCtx.testeCar;
   const usuarioLogado = autCtx.usuarioLogado;
   const id_usuario = usuarioLogado.id;
+  let numpedido = "0";
   const entrega =
     usuarioLogado.entregaendereco +
     ", " +
@@ -39,13 +41,23 @@ export default function Carrinho() {
       cliente: id_usuario,
       entrega: entrega,
     };
-    adicionarPedidoApi(pedido, carrinho)
+    adicionarPedidoApi(pedido)
       .then((resposta) => {
-        console.log(resposta);
+        numpedido = resposta.data;
+        baixarEstoque(numpedido);
         navigate("/menucliente");
       })
       .catch((erro) => console.log(erro));
+      
     limparCarrinho();
+  }
+
+  function baixarEstoque(numpedido) {
+    let estoque = [];
+    {carrinho.map((produto) => (
+      estoque = { id_produto: produto.id, id_pedido: numpedido},
+      removerEstoqueApi(estoque)
+    ))};
   }
 
   async function limparCarrinho() {
@@ -54,8 +66,8 @@ export default function Carrinho() {
 
   if (total > 0) {
     return (
-      <div id="container-center-produtos">
-        <div id="formatar-produtos">
+      <div id="container-center-carrinho">
+        <div id="formatar-carrinho">
           <h1>Confirme seu carrinho :)</h1>
           <table className="table">
             <thead>
